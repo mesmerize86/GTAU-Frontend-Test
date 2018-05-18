@@ -1,0 +1,56 @@
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    margin-top: $base-line-height;
+    margin-bottom: $base-line-height;
+}
+
+h1, h2, h3, h4 {
+    font-weight: $font-weight-normal;
+}
+
+h5, h6 {
+    font-weight: $font-weight-bold;
+}
+
+h1 {
+    font-size: $font-size-xxxlarge
+}
+
+h2 {
+    font-size: $font-size-xxlarge
+}
+
+h3 {
+    font-size: $font-size-xlarge
+}
+
+h4 {
+    font-size: $font-size-large
+}
+
+h5 {
+    font-size: $font-size-base
+}
+
+h6 {
+    font-size: $font-size-normal
+}
+
+small {
+    font-size: $font-size-small
+}
+
+
+a {
+	text-decoration: none;
+    outline: none;
+    -moz-outline-style: none;
+    color: $brand-color;
+    
+	&:hover, &:focus {
+		    text-decoration: none;
+        outline: none;
+        -moz-outline-style: none;
+        color: $brand-color-secondary;
+	}
+}

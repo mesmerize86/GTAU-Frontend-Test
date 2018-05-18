@@ -1,0 +1,32 @@
+// General
+$base-line-height: 16px;
+
+// Font
+$font-size-xxsmall: 9px;
+$font-size-xsmall: 10px;
+$font-size-small: 12px;
+$font-size-normal: 14px;
+$font-size-base: 16px;
+$font-size-large: 20px;
+$font-size-xlarge: 24px;
+$font-size-xxlarge: 28px;
+$font-size-xxxlarge: 32px;
+
+$font-weight-bold: 500;
+$font-weight-light: 300;
+$font-weight-normal: normal;
+
+$primary-font-family : 'Source Sans Pro', sans-serif;
+
+// Breakpoints
+$xsmall-min: 0;
+$xsmall-max: 420px;
+$small-min: $xsmall-max + 1;
+$small-max: 640px;
+$medium-min: $small-max + 1;
+$medium-max: 768px;
+$large-min: $medium-max + 1;
+$large-max:  992px;
+$xlarge-min: $large-max + 1;
+$xlarge-max: 1200px;
+$xxlarge-min: $xlarge-max + 1;

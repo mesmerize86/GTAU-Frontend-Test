@@ -1,0 +1,195 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "width": 402,
+        "paths": [
+          "M365.714 256v512c0 20-16.571 36.571-36.571 36.571-9.714 0-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714s4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857 20 0 36.571 16.571 36.571 36.571z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "caret-left"
+        ],
+        "grid": 14
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 0,
+        "prevSize": 28,
+        "code": 59650,
+        "name": "caret-left"
+      },
+      "setIdx": 0,
+      "setId": 7,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "width": 329,
+        "paths": [
+          "M329.143 512c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857-20 0-36.571-16.571-36.571-36.571v-512c0-20 16.571-36.571 36.571-36.571 9.714 0 18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "caret-right"
+        ],
+        "grid": 14
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 1,
+        "name": "caret-right",
+        "prevSize": 28,
+        "code": 59649
+      },
+      "setIdx": 0,
+      "setId": 7,
+      "iconIdx": 1
+    },
+    {
+      "icon": {
+        "width": 585,
+        "paths": [
+          "M585.143 694.857c0 20-16.571 36.571-36.571 36.571h-512c-20 0-36.571-16.571-36.571-36.571 0-9.714 4-18.857 10.857-25.714l256-256c6.857-6.857 16-10.857 25.714-10.857s18.857 4 25.714 10.857l256 256c6.857 6.857 10.857 16 10.857 25.714z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "caret-up"
+        ],
+        "grid": 14
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 2,
+        "prevSize": 28,
+        "code": 59652,
+        "name": "caret-up"
+      },
+      "setIdx": 0,
+      "setId": 7,
+      "iconIdx": 2
+    },
+    {
+      "icon": {
+        "width": 878,
+        "paths": [
+          "M585.143 292.571v-269.714c8 5.143 14.857 10.286 20.571 16l233.143 233.143c5.714 5.714 10.857 12.571 16 20.571h-269.714zM512 310.857c0 30.286 24.571 54.857 54.857 54.857h310.857v603.429c0 30.286-24.571 54.857-54.857 54.857h-768c-30.286 0-54.857-24.571-54.857-54.857v-914.286c0-30.286 24.571-54.857 54.857-54.857h457.143v310.857z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "file"
+        ],
+        "grid": 14
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 3,
+        "prevSize": 28,
+        "code": 59651,
+        "name": "file"
+      },
+      "setIdx": 0,
+      "setId": 7,
+      "iconIdx": 3
+    },
+    {
+      "icon": {
+        "paths": [
+          "M585.143 402.286c0 9.714-4 18.857-10.857 25.714l-256 256c-6.857 6.857-16 10.857-25.714 10.857s-18.857-4-25.714-10.857l-256-256c-6.857-6.857-10.857-16-10.857-25.714 0-20 16.571-36.571 36.571-36.571h512c20 0 36.571 16.571 36.571 36.571z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "width": 585,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "caret-down"
+        ],
+        "grid": 14
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 4,
+        "prevSize": 28,
+        "code": 59648,
+        "name": "caret-down"
+      },
+      "setIdx": 4,
+      "setId": 3,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "gumtree"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showQuickUse": false,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "gumtree",
+        "majorVersion": 1,
+        "minorVersion": 0
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false,
+      "autoHost": true,
+      "showSelector": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon"
+    },
+    "historySize": 50,
+    "showCodes": true,
+    "gridSize": 16,
+    "quickUsageToken": {
+      "UntitledProject": "YzQ5ZmJiMWE0Y2IxOGRiZjliZDJiNTU1NmIyODkwZTgjMSMxNTI2NjIxNzA5IyMj"
+    }
+  }
+}
