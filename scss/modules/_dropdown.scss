@@ -2,7 +2,6 @@
   &-bar{
     @include background-image(linear-gradient(left top, $secondary-color, $primary-color));
     background-color: #3baa33;
-    
     padding: 20px 30px;
     
     &-rounded--top{
@@ -13,6 +12,7 @@
   &-title{
     font-size: $font-size-xlarge;
     font-family: $primary-font-family;
+    
     
     .icon-file {
       color: $brand-color;

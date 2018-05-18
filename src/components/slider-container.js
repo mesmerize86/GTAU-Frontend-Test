@@ -2,10 +2,9 @@ import React from 'react';
 
 class SliderContainer extends React.Component {
   render () {
-    const contents = this.props.contents;
-    let bodyContent = contents.map((content, index) => {
+    let bodyContent = this.props.contents.map((content, index) => {
       return (<div className="slider-body" key={index}>
-        <div className="slider-thumbnail">{content.thumbnail}</div>
+        <div className="slider-thumbnail"><img src={content.thumbnail} className="img-responsive"/></div>
         <div className="slider-content"> {content.description}</div>
       </div>)
     })
