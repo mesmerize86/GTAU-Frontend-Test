@@ -1,8 +1,8 @@
 import React from 'react';
-import SliderContainer from './slider-container';
-
+import axios from 'axios';
 import classname from 'classnames';
-import content from '../data/content';
+
+import SliderContainer from './slider-container';
 
 class DropDown extends React.Component {
   constructor(props){
@@ -17,14 +17,19 @@ class DropDown extends React.Component {
     e.preventDefault();
     this.setState({isCollapsed : !this.state.isCollapsed});
   }
-  render () {
 
+  componentDidMount(){
+    axios.get('/src/data/content.json').then(response => {
+      this.setState({ data : response.data })
+    })
+  }
+  render () {
     return(
       <div className="dropdown">
         <div className="dropdown-bar dropdown-bar-rounded--top">
-          <p className="dropdown-title"><span className="icon-file"></span> {content.title} <a href="#" onClick={this.handleToggle.bind(this)}><span className={classname(this.state.isCollapsed ? "icon-caret-down" : "icon-caret-up")}></span></a></p>
+          <p className="dropdown-title"><span className="icon-file"></span> {this.state.data.title} <a href="#" onClick={this.handleToggle.bind(this)}><span className={classname(this.state.isCollapsed ? "icon-caret-down" : "icon-caret-up")}></span></a></p>
         </div>
-        { !this.state.isCollapsed ? (<div className="dropdown-content"><SliderContainer contents={content.content}/></div>) : null }
+        { !this.state.isCollapsed ? (<div className="dropdown-content"><SliderContainer contents={this.state.data.content}/></div>) : null }
       </div>
     )
   }
