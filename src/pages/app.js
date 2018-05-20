@@ -6,12 +6,14 @@ class App extends React.Component {
   constructor(props){
     super(props);
   }
-  
+
   render () {
       return(
-        <div className="panel panel-rounded--top">
-          <DropDown />
-        </div>
+        <div className="container">
+          <div className="panel panel-rounded--top panel-shadow">
+            <DropDown />
+          </div>
+      </div>
       );
   }
 }

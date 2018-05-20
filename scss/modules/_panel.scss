@@ -1,15 +1,17 @@
 .panel{
-  border: 1px solid black;
-  
+
   &-rounded {
     border-radius: 5px;
-    
+
     &--top{
       border-radius: 5px 5px 0px 0px;
     }
-    
+
     &--bottom{
       border-radius: 0px 0px 5px 5px;
     }
+  }
+  &-shadow{
+      @include box-shadow(3px 5px 10px $color-mono-light);
   }
 }

@@ -12,13 +12,13 @@ class DropDown extends React.Component {
       data: {}
     }
   }
-  
+
   handleToggle(e){
     e.preventDefault();
     this.setState({isCollapsed : !this.state.isCollapsed});
   }
   render () {
-    
+
     return(
       <div className="dropdown">
         <div className="dropdown-bar dropdown-bar-rounded--top">

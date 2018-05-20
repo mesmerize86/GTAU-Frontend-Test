@@ -1,3 +1,8 @@
+body{
+  font-family: $primary-font-family ;
+  font-size: $font-size-normal;
+  line-height: $base-line-height;
+}
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     margin-top: $base-line-height;
@@ -46,7 +51,7 @@ a {
     outline: none;
     -moz-outline-style: none;
     color: $brand-color;
-    
+
 	&:hover, &:focus {
 		    text-decoration: none;
         outline: none;
