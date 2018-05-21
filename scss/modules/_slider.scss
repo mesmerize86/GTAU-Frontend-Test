@@ -21,7 +21,7 @@
         width: 15%;
       }
     }
-    @include breakpoint("xlarge-below"){ /* In betweeen 768px - 1200px */
+    @include breakpoint("xlarge-below"){ /* max-width : 1200px */
       &{
         width: 35%;
       }
@@ -87,7 +87,7 @@
     &:active, &:focus, &:visited {
       outline: none;
     }
-    @include breakpoint("xlarge-up"){
+    @include breakpoint("xxlarge-up"){ 
       & {display: none;}
     }
     @include breakpoint("small-below"){

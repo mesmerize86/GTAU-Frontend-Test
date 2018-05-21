@@ -8,22 +8,26 @@ class DropDown extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      isCollapsed: false,
-      data: {}
+      isCollapsed: false, /* a flag to watch drop down behaviour*/
+      data: {} /* to hold the response from api */
     }
   }
 
+  /* toggle the drop down menu */
   handleToggle(e){
     e.preventDefault();
     this.setState({isCollapsed : !this.state.isCollapsed});
   }
 
+  /* Load data once the page is rendered */
   componentDidMount(){
     axios.get('/src/data/content.json').then(response => {
-      this.setState({ data : response.data })
+      this.setState({ data : response.data }) // get the response from api and save it to local state
+    }).catch(err => {
+      console.log(err);
     })
   }
-  render () {
+  render () {   
     return(
       <div className="dropdown">
         <div className="dropdown-bar dropdown-bar-rounded--top">
