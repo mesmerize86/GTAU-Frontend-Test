@@ -12,4 +12,4 @@
 - Search engines friendly
 
 #Improvements
-# - use react-redux
+ - use react-redux
