@@ -16,5 +16,5 @@ export const apiRequestError = (error) => ({
 export const contentApiRequest = () => (dispatch) => {
   return api.contents()
     .then(contents => dispatch(apiRequestSuccess(contents.data)))
-    .catch(err => dispatch(apiRequestError(err.response.status)));
+    .catch(err => dispatch(apiRequestError(err.response)));
 }

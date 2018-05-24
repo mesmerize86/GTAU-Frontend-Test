@@ -11,8 +11,7 @@ class DropDown extends React.Component {
     super(props);
     this.state = {
       isCollapsed: false, /* a flag to watch drop down behaviour*/
-      data: {} /* to hold the response from api */,
-      error: ''
+      contents: this.props.contents /* to hold the response from api */,
     }
   }
 
@@ -24,25 +23,33 @@ class DropDown extends React.Component {
 
   /* Load data once the page is rendered */
   componentDidMount(){
-    this.props.contentApiRequest()
-      .then(contents => {  
-        !contents.error ? this.setState({ data: contents.contents}) : this.setState({ error: contents.error})
-      })
+    this.props.contentApiRequest();    
   }
+  
+  componentWillReceiveProps(nextProps){
+    if(this.props.contents !== nextProps)
+      this.setState({ contents: nextProps.contents})
+  }
+  
   render () {   
     return(
       <div className="dropdown">
         <div className="dropdown-bar dropdown-bar-rounded--top">
-            {!this.state.error ? <p className="dropdown-title"><span className="icon-file"></span> {this.state.data.title} <a href="#" onClick={this.handleToggle.bind(this)}><span className={classname(this.state.isCollapsed ? "icon-caret-down" : "icon-caret-up")}></span></a></p> : <p className="dropdown-title">Couldn't find data. Pleaes contact administration</p>}
+            {this.props.contents.status !== 404 ? <p className="dropdown-title"><span className="icon-file"></span> {this.state.contents.title} <a href="#" onClick={this.handleToggle.bind(this)}><span className={classname(this.state.isCollapsed ? "icon-caret-down" : "icon-caret-up")}></span></a></p> : <p className="dropdown-title">Couldn't find contents. Pleaes contact administration</p>}
           </div> 
-        { !this.state.isCollapsed && !this.state.error ? (<div className="dropdown-content"><SliderContainer contents={this.state.data.content}/></div>) : null }
+        { !this.state.isCollapsed && this.props.contents.status !==404 ? (<div className="dropdown-content"><SliderContainer contents={this.state.contents.content}/></div>) : null }
       </div>
     )
   }
 }
 
 DropDown.propTypes = {
-  contentApiRequest : PropTypes.func.isRequired,
+  contentApiRequest : PropTypes.func.isRequired
 }
 
-export default connect(null, {contentApiRequest})(DropDown);
+const mapStateToProps = state => {
+  return {
+    contents: state.contents
+  }
+}
+export default connect(mapStateToProps, {contentApiRequest})(DropDown);
