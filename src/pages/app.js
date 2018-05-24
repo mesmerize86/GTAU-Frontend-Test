@@ -1,6 +1,5 @@
 import React from 'react';
-import SliderContainer from '../components/slider-container';
-import DropDown from '../components/dropdown';
+import DropDown from '../components/dropdown/dropdown';
 
 class App extends React.Component {
   constructor(props){

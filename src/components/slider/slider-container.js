@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 /*
  - dangerouslySetInnerHTML is not appropriate to use. Therefore I use other react wrapper.
  - For more details please click on the link. https://github.com/remarkablemark/html-react-parser
@@ -91,5 +92,4 @@ class SliderContainer extends React.Component {
 SliderContainer.propTypes = {
   contents: PropTypes.array
 }
-
 export default SliderContainer;
