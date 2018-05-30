@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import { contentApiRequest } from './dropdown-action';
 import SliderContainer from '../slider/slider-container';
+import DropdownContainer from './dropdown-container';
+import { errorContent } from '../shared/error-messages';
 
 class DropDown extends React.Component {
   constructor(props){
@@ -32,12 +34,19 @@ class DropDown extends React.Component {
   }
   
   render () {   
+    const sliderContent = ( !this.state.isCollapsed && this.props.contents.status !==404 ? 
+                              (<div className="dropdown-content"><SliderContainer contents={this.state.contents.content}/></div>) 
+                              :  null )
     return(
       <div className="dropdown">
         <div className="dropdown-bar dropdown-bar-rounded--top">
-            {this.props.contents.status !== 404 ? <p className="dropdown-title"><span className="icon-file"></span> {this.state.contents.title} <a href="#" onClick={this.handleToggle.bind(this)}><span className={classname(this.state.isCollapsed ? "icon-caret-down" : "icon-caret-up")}></span></a></p> : <p className="dropdown-title">Couldn't find contents. Pleaes contact administration</p>}
+            {this.props.contents.status !== 404 ? 
+              <DropdownContainer 
+                title={this.state.contents.title} 
+                handleToggle={this.handleToggle.bind(this)} 
+                isCollapsed={this.state.isCollapsed}/>: <p className="dropdown-title">{errorContent}</p>}
           </div> 
-        { !this.state.isCollapsed && this.props.contents.status !==404 ? (<div className="dropdown-content"><SliderContainer contents={this.state.contents.content}/></div>) : null }
+        {sliderContent}
       </div>
     )
   }

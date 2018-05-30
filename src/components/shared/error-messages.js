@@ -1,0 +1,1 @@
+export const errorContent = "Couldn't find contents. Pleaes contact administration";

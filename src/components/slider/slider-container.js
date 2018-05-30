@@ -17,6 +17,9 @@ class SliderContainer extends React.Component {
       isExpand: false, //a flag to watch the dropdown 
       contents: this.props.contents // get the data from parent component
     }
+    
+    this.handlePrevButton = this.handlePrevButton.bind(this);
+    this.handleNextButton = this.handleNextButton.bind(this);
   }
   
   /* */
@@ -51,20 +54,33 @@ class SliderContainer extends React.Component {
     if(this.props.contents !== nextProps.contents)
       this.setState({ contents: nextProps.contents});
   }
+  
+  onImageError(e){
+    const imagePath = "/assets/images/"; //Assuming this as dynamic source. Only for time being
+    (e)=>{e.target.src=`${imagePath}no-image-available.jpg`}
+  }
+  
+  handleImageError(content){
+    const imagePath = "/assets/images/"; //Assuming this as dynamic source. Only for time being
+    return !!content.thumbnail ? `${imagePath}${content.thumbnail}` : `${imagePath}no-image-available.jpg`
+  }
 
   render () {
     const { contents } = this.state;
-    const imagePath = "/assets/images/"; //Assuming this as dynamic source. Only for time being
     let sliderContent;
+    
+    const expandRedmoreButton = (!this.state.isExpand ? 
+                                  <p>More <span className="icon-add-outline"></span></p> 
+                                  : <p>Less <span className="icon-minus-outline"> </span></p>)
     
     if(this.props.contents){
       sliderContent = contents.map((content, index) => {
         return (<div className={classnames("slider-container", {"isActive" : this.state.currentSlide === index })} key={index} >
-        <div className="slider-thumbnail"><img onError={(e)=>{e.target.src=`${imagePath}no-image-available.jpg`}} src={!!content.thumbnail ? `${imagePath}${content.thumbnail}` : `${imagePath}no-image-available.jpg`} alt={content.title} className="img-responsive"/></div>
+        <div className="slider-thumbnail"><img onError={this.onImageError} src={this.handleImageError(content)} alt={content.title} className="img-responsive"/></div>
         <div className="slider-content">
           <p className="slider-title">{content.title}</p>
           <p className={classnames("slider-description", {'isExpand' : this.state.isExpand})} >{Parser(content.description)}</p>
-          <button className="slider-toggleButton" onClick={this.toggleTextArea.bind(this)}>{!this.state.isExpand ? <p>More <span className="icon-add-outline"></span></p> : <p>Less <span className="icon-minus-outline"> </span></p>}</button>
+          <button className="slider-toggleButton" onClick={this.toggleTextArea.bind(this)}>{expandRedmoreButton}</button>
         </div>
       </div>)
     });
@@ -76,10 +92,10 @@ class SliderContainer extends React.Component {
         <div className="slider-control">
           <ul className="slider-control-wrapper">
             <li className="slider-control--left">
-              <a href="#" className="slider-control-link" onClick={this.handlePrevButton.bind(this)}><span className="icon icon-caret-left"></span> <span className="control-text control-text--prev">Prev</span></a>
+              <a href="#" className="slider-control-link" onClick={this.handlePrevButton}><span className="icon icon-caret-left"></span> <span className="control-text control-text--prev">Prev</span></a>
             </li>
             <li className="slider-control--right">
-              <a href="#" className="slider-control-link" onClick={this.handleNextButton.bind(this)}><span className="control-text control-text--next">Next</span> <span className="icon icon-caret-right"></span></a>
+              <a href="#" className="slider-control-link" onClick={this.handleNextButton}><span className="control-text control-text--next">Next</span> <span className="icon icon-caret-right"></span></a>
             </li>
           </ul>
         </div>
