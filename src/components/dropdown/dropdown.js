@@ -8,6 +8,8 @@ import SliderContainer from '../slider/slider-container';
 import DropdownContainer from './dropdown-container';
 import { errorContent } from '../shared/error-messages';
 
+import Slideshow from '../slider/slideshow';
+
 class DropDown extends React.Component {
   constructor(props){
     super(props);
@@ -15,6 +17,7 @@ class DropDown extends React.Component {
       isCollapsed: false, /* a flag to watch drop down behaviour*/
       contents: this.props.contents /* to hold the response from api */,
     }
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   /* toggle the drop down menu */
@@ -34,19 +37,20 @@ class DropDown extends React.Component {
   }
   
   render () {   
-    const sliderContent = ( !this.state.isCollapsed && this.props.contents.status !==404 ? 
-                              (<div className="dropdown-content"><SliderContainer contents={this.state.contents.content}/></div>) 
-                              :  null )
     return(
       <div className="dropdown">
         <div className="dropdown-bar dropdown-bar-rounded--top">
             {this.props.contents.status !== 404 ? 
               <DropdownContainer 
                 title={this.state.contents.title} 
-                handleToggle={this.handleToggle.bind(this)} 
+                handleToggle={this.handleToggle} 
                 isCollapsed={this.state.isCollapsed}/>: <p className="dropdown-title">{errorContent}</p>}
           </div> 
-        {sliderContent}
+          <div className="dropdown-content">
+            {!this.state.isCollapsed && this.props.contents.status !==404 ? 
+              <Slideshow contents={this.state.contents.content} /> : null
+            }
+          </div>
       </div>
     )
   }

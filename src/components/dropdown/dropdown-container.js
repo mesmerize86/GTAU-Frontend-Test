@@ -2,6 +2,8 @@ import React from 'react';
 import classname from 'classnames';
 import PropTypes from 'prop-types';
 
+import Dropdown from './style'
+
 const DropdownContainer = ({title, handleToggle, isCollapsed}) => {
   return (
     <div>
